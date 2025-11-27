@@ -6,7 +6,7 @@ command="kubectl -n moodle exec -it redis-0 -- redis-cli --cluster create --clus
 
 for url in $urls
 do
-    command+=$url":6379 "
+    command+=$url":6380 "
 done
 
 echo "Executing command: " $command
@@ -17,7 +17,7 @@ cache_command="kubectl -n moodle exec -it redis-cache-0 -- redis-cli --cluster c
 
 for cache_url in $cache_urls
 do
-    cache_command+=$cache_url":6379 "
+    cache_command+=$cache_url":6380 "
 done
 
 echo "Executing command: " $caches_command
