@@ -5,13 +5,13 @@ resource "azurerm_cdn_frontdoor_profile" "moodle-front-door" {
 }
 
 resource "azurerm_cdn_frontdoor_endpoint" "moodle-front-door" {
-  name                     = "Moodle-chqapp"
+  name                     = "MoodleCon-chqapp"
   cdn_frontdoor_profile_id = azurerm_cdn_frontdoor_profile.moodle-front-door.id
 
 }
 
 resource "azurerm_cdn_frontdoor_origin_group" "moodle-front-door" {
-  name                     = "originGroup-Moodle-chqapp"
+  name                     = "originGroupCon-Moodle-chqapp"
   cdn_frontdoor_profile_id = azurerm_cdn_frontdoor_profile.moodle-front-door.id
 
   load_balancing {}
