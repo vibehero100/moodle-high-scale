@@ -7,9 +7,9 @@ spec:
   clusterIP: None
   ports:
   - name: redis-port
-    port: 6379
+    port: 6380
     protocol: TCP
-    targetPort: 6379
+    targetPort: 6380
   selector:
     app: redis
     appCluster: redis-cluster
@@ -25,9 +25,9 @@ spec:
   clusterIP: None
   ports:
   - name: redis-port
-    port: 6379
+    port: 6380
     protocol: TCP
-    targetPort: 6379
+    targetPort: 6380
   selector:
     app: redis-cache
     appCluster: redis-cache-cluster
