@@ -5,7 +5,7 @@ variable "moodle-high-scale-rg" {
 
 variable "moodle-environment" {
   type    = string
-  default = "development"
+  default = "production"
 }
 
 variable "environment_configuration" {
