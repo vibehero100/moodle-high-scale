@@ -4,7 +4,7 @@ provider "azurerm" {
 
 variable "moodle-high-scale-rg" {
   type    = string
-  default = "moodle-high-scale"
+  default = "Moodle"
 }
 
 data "azurerm_resource_group" "moodle-high-scale" {
@@ -25,4 +25,5 @@ data "azurerm_subnet" "app" {
   name                 = "app"
   virtual_network_name = "moodle-high-scale"
   resource_group_name  = data.azurerm_resource_group.moodle-high-scale.name
+
 }
