@@ -1,6 +1,6 @@
 variable "moodle-high-scale-rg" {
   type    = string
-  default = "moodle-high-scale"
+  default = "Moodle"
 }
 
 variable "moodle-environment" {
