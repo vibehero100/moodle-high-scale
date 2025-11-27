@@ -62,9 +62,9 @@ resource "kubernetes_secret" "moodle-config" {
     "STG_CONTAINER_NAME"      = azurerm_storage_container.moodle-assets.name
     "STG_SAS_TOKEN"           = trimprefix(data.azurerm_storage_account_blob_container_sas.sastoken.sas, "?")
     "REDIS_SESSION_HOST"      = "redis-cluster-svc"
-    "REDIS_SESSION_PORT"      = "6379"
+    "REDIS_SESSION_PORT"      = "6380"
     "REDIS_CACHE_HOST"        = "redis-cache-cluster-svc"
-    "REDIS_CACHE_PORT"        = "6379"
+    "REDIS_CACHE_PORT"        = "6380"
     "DATABASE_HOST"           = "pgbouncer-svc"
     "DATABASE_HOST_READ"      = "pgbouncer-read-svc"
     "DATABASE_PORT"           = "5432"
