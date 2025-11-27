@@ -35,10 +35,10 @@ spec:
             memory: "4Gi"
         ports:
             - name: redis
-              containerPort: 6379
+              containerPort: 6380
               protocol: "TCP"
             - name: cluster
-              containerPort: 16379
+              containerPort: 16380
               protocol: "TCP"
         startupProbe:
           periodSeconds: 5
@@ -137,10 +137,10 @@ spec:
             memory: "4Gi"
         ports:
             - name: redis
-              containerPort: 6379
+              containerPort: 6380
               protocol: "TCP"
             - name: cluster
-              containerPort: 16379
+              containerPort: 16380
               protocol: "TCP"
         startupProbe:
           periodSeconds: 5
