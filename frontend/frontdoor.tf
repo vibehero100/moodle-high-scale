@@ -10,13 +10,13 @@ data "azurerm_cdn_frontdoor_endpoint" "moodle-front-door" {
 }
 
 data "azurerm_cdn_frontdoor_origin_group" "moodle-front-door" {
-  name                = "moodle-front-door"
+  name                = "originGroupCon-Moodle-chqapp"
   profile_name        = "FrontDoorNNPC"
   resource_group_name = data.azurerm_resource_group.moodle-high-scale.name
 }
 
 resource "azurerm_cdn_frontdoor_origin" "moodle-front-door" {
-  name                           = "moodle-front-door"
+  name                           = "MoodleCon-chqapp-origin"
   cdn_frontdoor_origin_group_id  = data.azurerm_cdn_frontdoor_origin_group.moodle-front-door.id
   enabled                        = true
   host_name                      = data.azurerm_cdn_frontdoor_endpoint.moodle-front-door.host_name
@@ -34,7 +34,7 @@ resource "azurerm_cdn_frontdoor_origin" "moodle-front-door" {
 }
 
 resource "azurerm_cdn_frontdoor_route" "moodle-front-door" {
-  name                          = "moodle-front-door-route"
+  name                          = "routeCon-Moodle-chqapp"
   cdn_frontdoor_endpoint_id     = data.azurerm_cdn_frontdoor_endpoint.moodle-front-door.id
   cdn_frontdoor_origin_group_id = data.azurerm_cdn_frontdoor_origin_group.moodle-front-door.id
   cdn_frontdoor_origin_ids      = [azurerm_cdn_frontdoor_origin.moodle-front-door.id]
@@ -54,4 +54,5 @@ resource "azurerm_cdn_frontdoor_route" "moodle-front-door" {
   }
 
 }
+
 
