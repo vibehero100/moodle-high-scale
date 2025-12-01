@@ -31,24 +31,24 @@ variable "environment_configuration" {
         files_quota                     = "100"
 
     }
-    production = {
-        azure_database_sku              = "GP_Standard_D32ads_v5"
-        azure_database_read_replica_sku = "GP_Standard_D32ads_v5"
-        azure_database_storage          = "524288"
-        azure_database_version          = "15"
-        aks_system_nodepool_vmsize      = "Standard_D4ds_v5"
-        aks_app_nodepool_vmsize         = "Standard_D16ds_v5"
-        aks_jobs_nodepool_vmsize        = "Standard_D4ds_v5"
-        aks_redis_nodepool_vmsize       = "Standard_D8ds_v5"
-        aks_pgbouncer_nodepool_vmsize   = "Standard_D4ds_v5"
-        aks_nodepool_priority           = "Regular"
-        aks_sku_tier                    = "Standard"
-        aks_os_disk_type                = "Ephemeral"
-        redis_family                    = "P"
-        redis_sku                       = "Premium"
-        redis_capacity                  = "2"
-        files_quota                     = "1024"
-    } 
+   production = {
+    azure_database_sku              = "GP_Standard_D32s_v5"
+    azure_database_read_replica_sku = "GP_Standard_D32s_v5"
+    azure_database_storage          = "524288"
+    azure_database_version          = "15"
+    aks_system_nodepool_vmsize      = "Standard_D4ds_v5"
+    aks_app_nodepool_vmsize         = "Standard_D16ds_v5"
+    aks_jobs_nodepool_vmsize        = "Standard_D4ds_v5"
+    aks_redis_nodepool_vmsize       = "Standard_D8ds_v5"
+    aks_pgbouncer_nodepool_vmsize   = "Standard_D4ds_v5"
+    aks_nodepool_priority           = "Regular"
+    aks_sku_tier                    = "Standard"
+    aks_os_disk_type                = "Ephemeral"
+    redis_family                    = "P"
+    redis_sku                       = "Premium"
+    redis_capacity                  = "2"
+    files_quota                     = "1024"
+} 
   }
 }
 
