@@ -1,5 +1,5 @@
 resource "azurerm_cdn_frontdoor_profile" "moodle-front-door" {
-  name                = "FrontDoorNNPC"
+  name                = "moodle-front-door"
   resource_group_name = data.azurerm_resource_group.moodle-high-scale.name
   sku_name            = "Premium_AzureFrontDoor"
 }
