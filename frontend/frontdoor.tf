@@ -5,13 +5,13 @@ data "azurerm_private_link_service" "moodle-svc-pls" {
 
 data "azurerm_cdn_frontdoor_endpoint" "moodle-front-door" {
   name                = "MoodleCon-chqapp"
-  profile_name        = "FrontDoorNNPC"
+  profile_name        = "moodle-front-door"
   resource_group_name = data.azurerm_resource_group.moodle-high-scale.name
 }
 
 data "azurerm_cdn_frontdoor_origin_group" "moodle-front-door" {
   name                = "originGroupCon-Moodle-chqapp"
-  profile_name        = "FrontDoorNNPC"
+  profile_name        = "moodle-front-door"
   resource_group_name = data.azurerm_resource_group.moodle-high-scale.name
 }
 
@@ -54,5 +54,6 @@ resource "azurerm_cdn_frontdoor_route" "moodle-front-door" {
   }
 
 }
+
 
 
