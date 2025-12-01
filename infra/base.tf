@@ -1,5 +1,7 @@
 provider "azurerm" {
   features {}
+  skip_provider_registration = true
+
 }
 
 provider "kubernetes" {
@@ -29,4 +31,5 @@ data "azurerm_resource_group" "moodle-high-scale" {
 
 data "azurerm_client_config" "current" {
   
+
 }
