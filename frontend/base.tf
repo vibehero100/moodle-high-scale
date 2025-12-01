@@ -1,5 +1,7 @@
 provider "azurerm" {
   features {}
+  skip_provider_registration = true
+
 }
 
 variable "moodle-high-scale-rg" {
@@ -27,3 +29,4 @@ data "azurerm_subnet" "app" {
   resource_group_name  = data.azurerm_resource_group.moodle-high-scale.name
 
 }
+
