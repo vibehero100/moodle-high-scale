@@ -12,7 +12,7 @@ resource "azurerm_storage_account" "moodle-data" {
   account_tier             = "Premium"
   account_replication_type = "LRS"
   # disable secure transfer
-  enable_https_traffic_only = false
+  enable_https_traffic_only = true
 
 }
 
