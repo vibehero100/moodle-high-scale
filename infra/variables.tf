@@ -32,8 +32,8 @@ variable "environment_configuration" {
 
     }
     production = {
-        azure_database_sku              = "GP_Standard_D32ads_v5"
-        azure_database_read_replica_sku = "GP_Standard_D32ads_v5"
+        azure_database_sku              = "Standard_D4s_v3"
+        azure_database_read_replica_sku = "Standard_D4s_v3"
         azure_database_storage          = "524288"
         azure_database_version          = "15"
         aks_system_nodepool_vmsize      = "Standard_D4ds_v5"
