@@ -46,6 +46,9 @@ resource "azurerm_postgresql_flexible_server" "moodle-db-read-replica" {
   administrator_login    = "psqladmin"
   administrator_password = "${random_string.moodle-db-password.result}"
   zone                   = "1"
+  depends_on = [
+    azurerm_postgresql_flexible_server.moodle-db
+  ]
 }
 
 resource "azurerm_private_dns_zone" "moodle-cosmos-pgsql" {
