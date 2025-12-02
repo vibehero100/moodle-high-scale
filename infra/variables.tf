@@ -1,11 +1,11 @@
 variable "moodle-high-scale-rg" {
   type    = string
-  default = "moodle-high-scale"
+  default = "Moodle"
 }
 
 variable "moodle-environment" {
   type    = string
-  default = "development"
+  default = "production"
 }
 
 variable "environment_configuration" {
