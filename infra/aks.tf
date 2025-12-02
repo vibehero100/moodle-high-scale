@@ -33,7 +33,7 @@ resource "azurerm_kubernetes_cluster" "moodle-high-scale" {
     network_plugin      = "azure"
     service_cidr        = "172.29.100.0/24"
     dns_service_ip      = "172.29.100.10"
-    network_plugin_mode = "Overlay"
+    network_plugin_mode = "transparent"
   }
 
   storage_profile {
@@ -136,4 +136,5 @@ resource "azurerm_role_assignment" "aks-resource-group-kubelet" {
   scope                = data.azurerm_resource_group.moodle-high-scale.id
   role_definition_name = "Contributor"
   principal_id         = azurerm_kubernetes_cluster.moodle-high-scale.kubelet_identity.0.object_id
+
 }
