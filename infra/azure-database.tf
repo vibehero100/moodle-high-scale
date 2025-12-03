@@ -46,7 +46,7 @@ resource "azurerm_postgresql_flexible_server" "moodle-db-read-replica" {
   administrator_login    = "psqladmin"
   administrator_password = "${random_string.moodle-db-password.result}"
   zone                   = "1"
-  storage_mb = local.settings["azure_database_storage"] * 1.5
+  storage_mb = local.settings["azure_database_storage"]
   public_network_access_enabled = false
   depends_on = [
     azurerm_postgresql_flexible_server.moodle-db
