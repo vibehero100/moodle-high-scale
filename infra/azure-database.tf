@@ -22,7 +22,7 @@ resource "azurerm_postgresql_flexible_server" "moodle-db" {
   administrator_password = "${random_string.moodle-db-password.result}"
   zone                   = "1"
   public_network_access_enabled = false
-  storage_mb = local.settings["azure_database_storage"]
+  storage_mb = local.settings["azure_database_storage"] * 1.5
   sku_name   = local.settings["azure_database_sku"]
 
 }
