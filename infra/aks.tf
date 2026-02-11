@@ -21,6 +21,7 @@ resource "azurerm_kubernetes_cluster" "moodle-high-scale" {
     name                         = "system"
     vm_size                      = local.settings["aks_system_nodepool_vmsize"]
     only_critical_addons_enabled = true
+    enable_auto_scaling   = true
     min_count                    = 2
     max_count                    = 4
     os_disk_type                 = local.settings["aks_os_disk_type"]
@@ -55,7 +56,7 @@ resource "azurerm_kubernetes_cluster_node_pool" "moodle-high-scale-app" {
   kubernetes_cluster_id = azurerm_kubernetes_cluster.moodle-high-scale.id
   vm_size               = local.settings["aks_app_nodepool_vmsize"]
   priority              = local.settings["aks_nodepool_priority"]
-  auto_scaling_enabled = true
+  enable_auto_scaling   = true
   min_count             = 1
   max_count             = 100
   max_pods              = 250
@@ -89,7 +90,7 @@ resource "azurerm_kubernetes_cluster_node_pool" "moodle-high-scale-redis" {
   kubernetes_cluster_id = azurerm_kubernetes_cluster.moodle-high-scale.id
   vm_size               = local.settings["aks_redis_nodepool_vmsize"]
   priority              = local.settings["aks_nodepool_priority"]
-  auto_scaling_enabled = true
+  enable_auto_scaling   = true
   min_count             = 5
   max_count             = 30
   mode                  = "User"
@@ -106,7 +107,7 @@ resource "azurerm_kubernetes_cluster_node_pool" "moodle-high-scale-pgbouncer" {
   kubernetes_cluster_id = azurerm_kubernetes_cluster.moodle-high-scale.id
   vm_size               = local.settings["aks_pgbouncer_nodepool_vmsize"]
   priority              = local.settings["aks_nodepool_priority"]
-  auto_scaling_enabled = true
+    enable_auto_scaling   = true
   min_count             = 2
   max_count             = 10
   mode                  = "User"
@@ -136,5 +137,6 @@ resource "azurerm_role_assignment" "aks-resource-group-kubelet" {
   principal_id         = azurerm_kubernetes_cluster.moodle-high-scale.kubelet_identity.0.object_id
 
 }
+
 
 
