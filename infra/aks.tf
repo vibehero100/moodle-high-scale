@@ -21,7 +21,6 @@ resource "azurerm_kubernetes_cluster" "moodle-high-scale" {
     name                         = "system"
     vm_size                      = local.settings["aks_system_nodepool_vmsize"]
     only_critical_addons_enabled = true
-    auto_scaling_enabled = true
     min_count                    = 2
     max_count                    = 4
     os_disk_type                 = local.settings["aks_os_disk_type"]
@@ -137,4 +136,5 @@ resource "azurerm_role_assignment" "aks-resource-group-kubelet" {
   principal_id         = azurerm_kubernetes_cluster.moodle-high-scale.kubelet_identity.0.object_id
 
 }
+
 
